@@ -2,6 +2,7 @@ const express = require("express");
 
 const dotenv = require("dotenv");
 const usersRoute = require("./routes/usersRoute");
+const busesRoutes = require("./routes/busesRoute");
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", usersRoute);
+app.use("/api/buses", busesRoutes);
 
 const PORT = process.env.PORT;
 
