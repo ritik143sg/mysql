@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const sequelize = require("./utils/DB/dbConnection");
-const Student = require("./models/studentModel");
+require("./models");
 const studentRoute = require("./routes/studentRoutes");
 
 const app = express();
