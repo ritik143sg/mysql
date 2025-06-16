@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Booking Appointment App</title>
+  </head>
+  <body class="body">
+    <h1>Booking Appointment App</h1>
+    <br /><br />
+    <form action="" onsubmit="handleSubmit(event)">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username" />
+      <br /><br />
+
+      <label for="PhoneNo">PnoneNo: </label>
+      <input type="text" name="phoneNo" id="phoneNo" />
+      <br /><br />
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" />
+      <br /><br />
+      <button id="button">Add Appointment</button>
+    </form>
+    <ul></ul>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</html>
