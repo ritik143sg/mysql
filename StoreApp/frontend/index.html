@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Store App</title>
+  </head>
+  <body>
+    <h1>Store App</h1>
+
+    <form action="" onsubmit="handleSubmit(event)">
+      <label for="name">Item: </label>
+      <input type="text" name="name" id="name" /><br /><br />
+      <label for="desc">Description: </label>
+      <input type="text" name="desc" id="desc" /><br /><br />
+      <label for="price">Price: </label>
+      <input type="number" name="price" id="price" /><br /><br />
+      <label for="qty">Quantity: </label>
+      <input type="number" name="qty" id="qty" /><br /><br />
+      <button>Add Item</button>
+    </form>
+    <ul></ul>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</html>
