@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./BusBookingWithSequelize/server.js",
+    "start": "nodemon ./ExpenseApp/backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
