@@ -1,3 +1,4 @@
+const { Booking, Buses } = require("../models");
 const Users = require("../models/userModel");
 
 const getUsers = async (req, res) => {
@@ -34,4 +35,30 @@ const addUsers = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, addUsers };
+const getUserWithBooking = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const bookings = await Booking.findAll({
+      where: { UserId: id },
+      include: [
+        {
+          model: Buses,
+          attributes: ["busNumber"],
+        },
+      ],
+    });
+
+    if (bookings.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No bookings found for this user." });
+    }
+
+    res.status(200).json(bookings);
+  } catch (error) {
+    console.error("Error fetching bookings:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+module.exports = { getUsers, addUsers, getUserWithBooking };
