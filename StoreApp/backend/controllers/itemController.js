@@ -34,12 +34,13 @@ const updateItem = async (req, res) => {
     const data = req.body;
 
     const item = await Item.findByPk(id);
+    console.log(item, data, id);
 
     if (!item) {
       return res.status(404).json({ msg: "Item not found" });
     }
 
-    if (item.itemQyt < data.itemQyt) {
+    if (data.operation === "Sub" && data.itemQyt < 0) {
       res.status(500).json({ msg: "Update failed", error: error.message });
     }
     await Item.update({ itemQyt: data.itemQyt }, { where: { id: id } });

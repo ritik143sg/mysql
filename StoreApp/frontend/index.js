@@ -52,7 +52,7 @@ const display = async (items) => {
 
       const response = await axios.patch(
         `http://localhost:4000/api/item/${id}`,
-        { itemQyt: item.itemQyt - 1 }
+        { itemQyt: item.itemQyt - 1, operation: "Sub" }
       );
       console.log(response);
       initialize();
@@ -64,7 +64,7 @@ const display = async (items) => {
 
       const response = await axios.patch(
         `http://localhost:4000/api/item/${id}`,
-        { itemQyt: item.itemQyt - 2 }
+        { itemQyt: item.itemQyt - 2, operation: "Sub" }
       );
       console.log(response);
       initialize();
@@ -76,20 +76,20 @@ const display = async (items) => {
 
       const response = await axios.patch(
         `http://localhost:4000/api/item/${id}`,
-        { itemQyt: item.itemQyt - 3 }
+        { itemQyt: item.itemQyt - 3, operation: "Sub" }
       );
       console.log(response);
       initialize();
     });
 
     const edit4 = document.createElement("button");
-    edit4.innerText = "Buy 4";
+    edit4.innerText = "Add 10";
     edit4.addEventListener("click", async () => {
       const id = item.id;
 
       const response = await axios.patch(
         `http://localhost:4000/api/item/${id}`,
-        { itemQyt: item.itemQyt - -4 }
+        { itemQyt: Number(Number(item.itemQyt) + 10), operation: "Add" }
       );
       console.log(response);
       initialize();
